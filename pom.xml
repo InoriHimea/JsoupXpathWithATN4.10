@@ -7,7 +7,7 @@
     </parent>
     <groupId>cn.wanghaomiao</groupId>
     <artifactId>JsoupXpath</artifactId>
-    <version>2.5.3</version>
+    <version>2.5.3-2</version>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <name>JsoupXpath</name>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
-            <version>1.15.3</version>
+            <version>1.15.4</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -48,7 +48,8 @@
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
-            <version>4.7.2</version>
+            <version>4.10.1</version>
+<!--            <version>4.7.2</version>-->
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -113,6 +114,23 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>4.10.1</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/main/resources</sourceDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>antlr</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
